@@ -1,0 +1,25 @@
+$ sshd -T | grep -Ei '^(banner|clientalive|disableforwarding|logingracetime|macs|maxauthtries|maxstartups|permitrootlogin)'
+logingracetime 60
+maxauthtries 4
+clientaliveinterval 300
+clientalivecountmax 3
+permitrootlogin no
+disableforwarding yes
+macs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512,hmac-sha2-256
+banner /etc/issue.net
+maxstartups 10:30:60
+
+$ grep -E '^(NTP|System|Runtime|MaxFile)' /etc/systemd/timesyncd.conf /etc/systemd/journald.conf
+/etc/systemd/timesyncd.conf:NTP=0.za.pool.ntp.org 1.za.pool.ntp.org
+/etc/systemd/journald.conf:SystemMaxUse=500M
+/etc/systemd/journald.conf:SystemKeepFree=1G
+/etc/systemd/journald.conf:RuntimeMaxUse=50M
+/etc/systemd/journald.conf:RuntimeKeepFree=50M
+/etc/systemd/journald.conf:MaxFileSec=1month
+
+$ stat -c '%a %U:%G %n' /etc/crontab /etc/cron.d /etc/cron.daily /etc/ssh/sshd_config
+600 root:root /etc/crontab
+700 root:root /etc/cron.d
+700 root:root /etc/cron.daily
+600 root:root /etc/ssh/sshd_config
+

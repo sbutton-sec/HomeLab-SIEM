@@ -1,0 +1,18 @@
+$ pihole deny -l
+  [✓] Found 3 domain(s) in the exact denylist:
+    - "verificator[.]cc"
+      Comment: null
+      Groups: [0]
+      Added: Thu Nov 26 04:17:03 PM SAST 2026
+      Last modified: Thu Nov 26 04:17:03 PM SAST 2026
+    - "flybluecrane[.]com"
+      Comment: null
+      Groups: [0]
+      Added: Thu Nov 26 04:21:25 PM SAST 2026
+      Last modified: Thu Nov 26 04:21:25 PM SAST 2026
+    - "www[.]flybluecrane[.]com"
+      Comment: null
+      Groups: [0]
+      Added: Thu Nov 26 04:21:25 PM SAST 2026
+      Last modified: Thu Nov 26 04:21:25 PM SAST 2026
+

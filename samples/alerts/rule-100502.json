@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-11-26T17:07:53.928+0200",
+  "rule": {
+    "level": 10,
+    "description": "SSH: direct ROOT login from 10.66.66.66.",
+    "id": "100502",
+    "mitre": {
+      "id": [
+        "T1078.003"
+      ],
+      "tactic": [
+        "Defense Evasion",
+        "Persistence",
+        "Privilege Escalation",
+        "Initial Access"
+      ],
+      "technique": [
+        "Local Accounts"
+      ]
+    },
+    "firedtimes": 1,
+    "mail": false,
+    "groups": [
+      "local",
+      "linux",
+      "sshd",
+      "authentication_success"
+    ]
+  },
+  "agent": {
+    "id": "002",
+    "name": "proxmox",
+    "ip": "10.66.66.22"
+  },
+  "manager": {
+    "name": "siem"
+  },
+  "id": "1795705673.7773338",
+  "full_log": "Nov 26 15:07:52 pve sshd[3722288]: Accepted password for root from 10.66.66.66 port 36869 ssh2",
+  "predecoder": {
+    "program_name": "sshd",
+    "timestamp": "Nov 26 15:07:52",
+    "hostname": "pve"
+  },
+  "decoder": {
+    "parent": "sshd",
+    "name": "sshd"
+  },
+  "data": {
+    "srcip": "10.66.66.66",
+    "srcport": "36869",
+    "dstuser": "root"
+  },
+  "location": "journald"
+}

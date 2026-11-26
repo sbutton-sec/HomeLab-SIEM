@@ -1,0 +1,56 @@
+{
+  "timestamp": "2026-11-26T14:38:35.841+0200",
+  "rule": {
+    "level": 12,
+    "description": "FIM: critical access file changed: /etc/ssh/sshd_config.d/10-cis-hardening.conf",
+    "id": "100600",
+    "mitre": {
+      "id": [
+        "T1098"
+      ],
+      "tactic": [
+        "Persistence"
+      ],
+      "technique": [
+        "Account Manipulation"
+      ]
+    },
+    "firedtimes": 2,
+    "mail": true,
+    "groups": [
+      "local",
+      "syscheck",
+      "fim"
+    ]
+  },
+  "agent": {
+    "id": "002",
+    "name": "proxmox",
+    "ip": "10.66.66.22"
+  },
+  "manager": {
+    "name": "siem"
+  },
+  "id": "1795696715.3509736",
+  "full_log": "File '/etc/ssh/sshd_config.d/10-cis-hardening.conf' added\nMode: realtime\n",
+  "syscheck": {
+    "path": "/etc/ssh/sshd_config.d/10-cis-hardening.conf",
+    "mode": "realtime",
+    "size_after": "334",
+    "perm_after": "rw-------",
+    "uid_after": "0",
+    "gid_after": "0",
+    "md5_after": "8fa4d366180dfa7e81a29516517b5ec6",
+    "sha1_after": "4edad23ef31a3d756a7ac40b1a8c73626721e0c9",
+    "sha256_after": "6a738f1392629f62939155d3d5ac6959965a047772c67be759aa520e624b9420",
+    "uname_after": "root",
+    "gname_after": "root",
+    "mtime_after": "2026-11-26T14:38:35",
+    "inode_after": 134673518,
+    "event": "added"
+  },
+  "decoder": {
+    "name": "syscheck_new_entry"
+  },
+  "location": "syscheck"
+}

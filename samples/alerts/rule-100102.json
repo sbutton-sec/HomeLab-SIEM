@@ -1,0 +1,78 @@
+{
+  "timestamp": "2026-11-26T16:58:38.714+0200",
+  "rule": {
+    "level": 7,
+    "description": "Suricata MEDIUM severity: ET SCAN NMAP -sA (1)",
+    "id": "100102",
+    "firedtimes": 3,
+    "mail": false,
+    "groups": [
+      "local",
+      "suricata",
+      "ids"
+    ]
+  },
+  "agent": {
+    "id": "001",
+    "name": "OPNsenseRouter.localdomain",
+    "ip": "10.66.66.1"
+  },
+  "manager": {
+    "name": "siem"
+  },
+  "id": "1795705118.5718308",
+  "full_log": "{\"timestamp\":\"2026-11-26T16:58:37.896782+0200\",\"flow_id\":1598226389156536,\"in_iface\":\"vtnet1^\",\"event_type\":\"alert\",\"src_ip\":\"<PUBLIC-IP>\",\"src_port\":443,\"dest_ip\":\"10.66.66.200\",\"dest_port\":61163,\"proto\":\"TCP\",\"ip_v\":4,\"pkt_src\":\"wire/pcap\",\"alert\":{\"action\":\"allowed\",\"gid\":1,\"signature_id\":2000538,\"rev\":8,\"signature\":\"ET SCAN NMAP -sA (1)\",\"category\":\"Attempted Information Leak\",\"severity\":2,\"metadata\":{\"confidence\":[\"Low\"],\"created_at\":[\"2010_07_30\"],\"signature_severity\":[\"Informational\"],\"updated_at\":[\"2019_07_26\"]}},\"app_proto\":\"tls\",\"direction\":\"to_client\",\"flow\":{\"pkts_toserver\":30,\"pkts_toclient\":31,\"bytes_toserver\":9892,\"bytes_toclient\":9653,\"start\":\"2026-11-26T16:58:37.241044+0200\",\"src_ip\":\"10.66.66.200\",\"dest_ip\":\"<PUBLIC-IP>\",\"src_port\":61163,\"dest_port\":443}}",
+  "decoder": {
+    "name": "json"
+  },
+  "data": {
+    "timestamp": "2026-11-26T16:58:37.896782+0200",
+    "flow_id": "1598226389156536.000000",
+    "in_iface": "vtnet1^",
+    "event_type": "alert",
+    "src_ip": "<PUBLIC-IP>",
+    "src_port": "443",
+    "dest_ip": "10.66.66.200",
+    "dest_port": "61163",
+    "proto": "TCP",
+    "ip_v": "4",
+    "pkt_src": "wire/pcap",
+    "alert": {
+      "action": "allowed",
+      "gid": "1",
+      "signature_id": "2000538",
+      "rev": "8",
+      "signature": "ET SCAN NMAP -sA (1)",
+      "category": "Attempted Information Leak",
+      "severity": "2",
+      "metadata": {
+        "confidence": [
+          "Low"
+        ],
+        "created_at": [
+          "2010_07_30"
+        ],
+        "signature_severity": [
+          "Informational"
+        ],
+        "updated_at": [
+          "2019_07_26"
+        ]
+      }
+    },
+    "app_proto": "tls",
+    "direction": "to_client",
+    "flow": {
+      "pkts_toserver": "30",
+      "pkts_toclient": "31",
+      "bytes_toserver": "9892",
+      "bytes_toclient": "9653",
+      "start": "2026-11-26T16:58:37.241044+0200",
+      "src_ip": "10.66.66.200",
+      "dest_ip": "<PUBLIC-IP>",
+      "src_port": "61163",
+      "dest_port": "443"
+    }
+  },
+  "location": "/var/log/suricata/eve.json"
+}

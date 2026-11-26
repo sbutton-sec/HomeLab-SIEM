@@ -1,0 +1,30 @@
+$ sshd -T | grep -Ei '^(banner|allowusers|clientalive|disableforwarding|logingracetime|macs|maxauthtries|maxstartups|permitrootlogin)'
+logingracetime 60
+maxauthtries 4
+clientaliveinterval 300
+clientalivecountmax 3
+permitrootlogin yes
+disableforwarding yes
+macs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512,hmac-sha2-256
+banner /etc/issue.net
+allowusers root
+maxstartups 10:30:60
+
+$ grep -n pam_wheel /etc/pam.d/su
+15:# auth       required   pam_wheel.so
+16:auth       required   pam_wheel.so use_uid group=sugroup
+20:# auth       sufficient pam_wheel.so trust
+24:# auth       required   pam_wheel.so deny group=nosu
+
+$ ps -o user= -C chronyd
+_chrony
+_chrony
+
+$ chronyc sources | head -6
+MS Name/IP address         Stratum Poll Reach LastRx Last sample               
+===============================================================================
+^+ ntp5.inx.net.za               2  10   377   578  +1130us[+1155us] +/-   51ms
+^+ ntp3.inx.net.za               2  10   377   505   +742us[ +742us] +/-   46ms
+^* <PUBLIC-IP>                  2  10   377   525  -1135us[-1110us] +/-   24ms
+^+ ntp8.inx.net.za               2  10   377   608   +941us[ +966us] +/-   90ms
+

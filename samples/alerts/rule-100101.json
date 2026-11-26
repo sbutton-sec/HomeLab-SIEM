@@ -1,0 +1,96 @@
+{
+  "timestamp": "2026-11-26T16:06:38.653+0200",
+  "rule": {
+    "level": 10,
+    "description": "Suricata HIGH severity: ThreatFox payload delivery (domain - confidence level: 100%)",
+    "id": "100101",
+    "firedtimes": 2,
+    "mail": false,
+    "groups": [
+      "local",
+      "suricata",
+      "ids"
+    ]
+  },
+  "agent": {
+    "id": "001",
+    "name": "OPNsenseRouter.localdomain",
+    "ip": "10.66.66.1"
+  },
+  "manager": {
+    "name": "siem"
+  },
+  "id": "1795701998.4351902",
+  "full_log": "{\"timestamp\":\"2026-11-26T16:06:38.081727+0200\",\"flow_id\":1758393730962066,\"in_iface\":\"vtnet1\",\"event_type\":\"alert\",\"src_ip\":\"10.66.66.50\",\"src_port\":39938,\"dest_ip\":\"<PUBLIC-IP>\",\"dest_port\":53,\"proto\":\"UDP\",\"ip_v\":4,\"pkt_src\":\"wire/pcap\",\"tx_id\":0,\"alert\":{\"action\":\"allowed\",\"gid\":1,\"signature_id\":91972291,\"rev\":1,\"signature\":\"ThreatFox payload delivery (domain - confidence level: 100%)\",\"category\":\"A Network Trojan was detected\",\"severity\":1,\"source\":{\"ip\":\"<PUBLIC-IP>\",\"port\":53},\"target\":{\"ip\":\"10.66.66.50\",\"port\":39938},\"metadata\":{\"confidence_level\":[\"100\"],\"first_seen\":[\"2026_10_18\"]}},\"dns\":{\"version\":3,\"type\":\"request\",\"tx_id\":0,\"id\":8190,\"flags\":\"10\",\"opcode\":0,\"rcode\":\"NOERROR\",\"queries\":[{\"rrname\":\"verificator[.]cc\",\"rrtype\":\"A\"}]},\"app_proto\":\"dns\",\"direction\":\"to_server\",\"flow\":{\"pkts_toserver\":1,\"pkts_toclient\":0,\"bytes_toserver\":85,\"bytes_toclient\":0,\"start\":\"2026-11-26T16:06:38.081727+0200\",\"src_ip\":\"10.66.66.50\",\"dest_ip\":\"<PUBLIC-IP>\",\"src_port\":39938,\"dest_port\":53}}",
+  "decoder": {
+    "name": "json"
+  },
+  "data": {
+    "timestamp": "2026-11-26T16:06:38.081727+0200",
+    "flow_id": "1758393730962066.000000",
+    "in_iface": "vtnet1",
+    "event_type": "alert",
+    "src_ip": "10.66.66.50",
+    "src_port": "39938",
+    "dest_ip": "<PUBLIC-IP>",
+    "dest_port": "53",
+    "proto": "UDP",
+    "ip_v": "4",
+    "pkt_src": "wire/pcap",
+    "tx_id": "0",
+    "alert": {
+      "action": "allowed",
+      "gid": "1",
+      "signature_id": "91972291",
+      "rev": "1",
+      "signature": "ThreatFox payload delivery (domain - confidence level: 100%)",
+      "category": "A Network Trojan was detected",
+      "severity": "1",
+      "source": {
+        "ip": "<PUBLIC-IP>",
+        "port": "53"
+      },
+      "target": {
+        "ip": "10.66.66.50",
+        "port": "39938"
+      },
+      "metadata": {
+        "confidence_level": [
+          "100"
+        ],
+        "first_seen": [
+          "2026_10_18"
+        ]
+      }
+    },
+    "dns": {
+      "version": "3",
+      "type": "request",
+      "tx_id": "0",
+      "id": "8190",
+      "flags": "10",
+      "opcode": "0",
+      "rcode": "NOERROR",
+      "queries": [
+        {
+          "rrname": "verificator[.]cc",
+          "rrtype": "A"
+        }
+      ]
+    },
+    "app_proto": "dns",
+    "direction": "to_server",
+    "flow": {
+      "pkts_toserver": "1",
+      "pkts_toclient": "0",
+      "bytes_toserver": "85",
+      "bytes_toclient": "0",
+      "start": "2026-11-26T16:06:38.081727+0200",
+      "src_ip": "10.66.66.50",
+      "dest_ip": "<PUBLIC-IP>",
+      "src_port": "39938",
+      "dest_port": "53"
+    }
+  },
+  "location": "/var/log/suricata/eve.json"
+}

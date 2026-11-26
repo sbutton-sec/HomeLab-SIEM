@@ -1,0 +1,22 @@
+$ ufw status verbose
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), disabled (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+53/udp                     ALLOW IN    10.66.66.0/24             
+80/tcp                     ALLOW IN    10.66.66.0/24             
+53/tcp                     ALLOW IN    10.66.66.0/24             
+443/tcp                    ALLOW IN    10.66.66.0/24             
+22/tcp                     ALLOW IN    10.66.66.66               
+3000/tcp                   ALLOW IN    10.66.66.66               
+53/udp                     ALLOW IN    10.10.10.0/24             
+53/tcp                     ALLOW IN    10.10.10.0/24             
+80/tcp                     ALLOW IN    10.10.10.0/24             
+443/tcp                    ALLOW IN    10.10.10.0/24             
+22/tcp                     ALLOW IN    10.10.10.0/24             
+3000/tcp                   ALLOW IN    10.10.10.0/24             
+
+

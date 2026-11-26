@@ -1,0 +1,4 @@
+#!/bin/sh
+# Launcher: runs custom-telegram.py with Wazuh's bundled Python
+DIR="$(cd "$(dirname "$0")" && pwd -P)"
+exec /var/ossec/framework/python/bin/python3 "${DIR}/$(basename "$0").py" "$@"

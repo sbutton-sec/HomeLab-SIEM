@@ -1,0 +1,52 @@
+{
+  "timestamp": "2026-11-25T16:16:49.465+0200",
+  "rule": {
+    "level": 10,
+    "description": "OPNsense: possible brute force - 5 failed web GUI logins from 10.66.66.66 in 2 minutes.",
+    "id": "100207",
+    "mitre": {
+      "id": [
+        "T1110.001"
+      ],
+      "tactic": [
+        "Credential Access"
+      ],
+      "technique": [
+        "Password Guessing"
+      ]
+    },
+    "frequency": 5,
+    "firedtimes": 1,
+    "mail": false,
+    "groups": [
+      "local",
+      "opnsense",
+      "authentication_failures"
+    ]
+  },
+  "agent": {
+    "id": "001",
+    "name": "OPNsenseRouter.localdomain",
+    "ip": "10.66.66.1"
+  },
+  "manager": {
+    "name": "siem"
+  },
+  "id": "1795616209.17444444",
+  "previous_output": "Nov 25 16:16:38 OPNsenseRouter.localdomain audit[38699]: /index.php: Web GUI authentication error for 'root' from 10.66.66.66\nNov 25 16:16:30 OPNsenseRouter.localdomain audit[47590]: /index.php: Web GUI authentication error for 'admin' from 10.66.66.66\nNov 25 16:16:17 OPNsenseRouter.localdomain audit[38699]: /index.php: Web GUI authentication error for 'root' from 10.66.66.66\nNov 25 16:16:07 OPNsenseRouter.localdomain audit[47590]: /index.php: Web GUI authentication error for 'root' from 10.66.66.66",
+  "full_log": "Nov 25 16:16:47 OPNsenseRouter.localdomain audit[47590]: /index.php: Web GUI authentication error for 'root' from 10.66.66.66",
+  "predecoder": {
+    "program_name": "audit",
+    "timestamp": "Nov 25 16:16:47",
+    "hostname": "OPNsenseRouter.localdomain"
+  },
+  "decoder": {
+    "name": "opnsense-audit"
+  },
+  "data": {
+    "srcip": "10.66.66.66",
+    "dstuser": "root",
+    "url": "/index.php"
+  },
+  "location": "/var/ossec/logs/opnsense_syslog.log"
+}

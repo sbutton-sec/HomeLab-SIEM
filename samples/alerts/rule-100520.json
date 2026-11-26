@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-11-25T17:06:31.494+0200",
+  "rule": {
+    "level": 10,
+    "description": "New local user account 'wazuhtest2' created.",
+    "id": "100520",
+    "mitre": {
+      "id": [
+        "T1136.001"
+      ],
+      "tactic": [
+        "Persistence"
+      ],
+      "technique": [
+        "Local Account"
+      ]
+    },
+    "firedtimes": 1,
+    "mail": false,
+    "groups": [
+      "local",
+      "linux",
+      "sshd",
+      "account_changed"
+    ]
+  },
+  "agent": {
+    "id": "003",
+    "name": "pihole",
+    "ip": "10.66.66.50"
+  },
+  "manager": {
+    "name": "siem"
+  },
+  "id": "1795619191.17655378",
+  "full_log": "Nov 25 15:06:29 ubuntu useradd[119937]: new user: name=wazuhtest2, UID=1001, GID=1002, home=/home/wazuhtest2, shell=/usr/sbin/nologin, from=/dev/pts/1",
+  "predecoder": {
+    "program_name": "useradd",
+    "timestamp": "Nov 25 15:06:29",
+    "hostname": "ubuntu"
+  },
+  "decoder": {
+    "parent": "useradd",
+    "name": "useradd"
+  },
+  "data": {
+    "dstuser": "wazuhtest2",
+    "uid": "1001",
+    "gid": "1002",
+    "home": "/home/wazuhtest2",
+    "shell": "/usr/sbin/nologin,"
+  },
+  "location": "journald"
+}

@@ -1,0 +1,46 @@
+{
+  "timestamp": "2026-11-26T16:58:01.651+0200",
+  "rule": {
+    "level": 3,
+    "description": "Firewall: internet traffic from <PUBLIC-IP> blocked repeatedly (expected background noise).",
+    "id": "100302",
+    "firedtimes": 1,
+    "mail": false,
+    "groups": [
+      "local",
+      "pfsense",
+      "firewall",
+      "multiple_blocks"
+    ]
+  },
+  "agent": {
+    "id": "001",
+    "name": "OPNsenseRouter.localdomain",
+    "ip": "10.66.66.1"
+  },
+  "manager": {
+    "name": "siem"
+  },
+  "id": "1795705081.5683731",
+  "previous_output": "Nov 26 16:57:58 OPNsenseRouter.localdomain filterlog[20894]: 89,,,49183451-df58-4ecd-a7fd-84e3494bb1dd,pppoe1,match,block,in,4,0x0,,89,0,0,DF,17,udp,61,<PUBLIC-IP>,<PUBLIC-IP>,443,31641,41\nNov 26 16:57:56 OPNsenseRouter.localdomain filterlog[20894]: 89,,,49183451-df58-4ecd-a7fd-84e3494bb1dd,pppoe1,match,block,in,4,0x0,,89,0,0,DF,17,udp,69,<PUBLIC-IP>,<PUBLIC-IP>,443,16000,49\nNov 26 16:57:55 OPNsenseRouter.localdomain filterlog[20894]: 89,,,49183451-df58-4ecd-a7fd-84e3494bb1dd,pppoe1,match,block,in,4,0x0,,89,0,0,DF,17,udp,61,<PUBLIC-IP>,<PUBLIC-IP>,443,31641,41\nNov 26 16:57:54 OPNsenseRouter.localdomain filterlog[20894]: 89,,,49183451-df58-4ecd-a7fd-84e3494bb1dd,pppoe1,match,block,in,4,0x0,,89,0,0,DF,17,udp,61,<PUBLIC-IP>,<PUBLIC-IP>,443,31641,41\nNov 26 16:57:53 OPNsenseRouter.localdomain filterlog[20894]: 89,,,49183451-df58-4ecd-a7fd-84e3494bb1dd,pppoe1,match,block,in,4,0x0,,89,0,0,DF,17,udp,61,<PUBLIC-IP>,<PUBLIC-IP>,443,31641,41\nNov 26 16:57:53 OPNsenseRouter.localdomain filterlog[20894]: 89,,,49183451-df58-4ecd-a7fd-84e3494bb1dd,pppoe1,match,block,in,4,0x0,,89,0,0,DF,17,udp,69,<PUBLIC-IP>,<PUBLIC-IP>,443,16000,49\nNov 26 16:57:53 OPNsenseRouter.localdomain filterlog[20894]: 89,,,49183451-df58-4ecd-a7fd-84e3494bb1dd,pppoe1,match,block,in,4,0x0,,89,0,0,DF,17,udp,61,<PUBLIC-IP>,<PUBLIC-IP>,443,31641,41\nNov 26 16:57:53 OPNsenseRouter.localdomain filterlog[20894]: 89,,,49183451-df58-4ecd-a7fd-84e3494bb1dd,pppoe1,match,block,in,4,0x0,,89,0,0,DF,17,udp,61,<PUBLIC-IP>,<PUBLIC-IP>,443,31641,41\nNov 26 16:57:53 OPNsenseRouter.localdomain filterlog[20894]: 89,,,49183451-df58-4ecd-a7fd-84e3494bb1dd,pppoe1,match,block,in,4,0x0,,89,0,0,DF,17,udp,61,<PUBLIC-IP>,<PUBLIC-IP>,443,31641,41\nNov 26 16:57:53 OPNsenseRouter.localdomain filterlog[20894]: 89,,,49183451-df58-4ecd-a7fd-84e3494bb1dd,pppoe1,match,block,in,4,0x0,,89,0,0,DF,17,udp,61,<PUBLIC-IP>,<PUBLIC-IP>,443,31641,41\nNov 26 16:57:53 OPNsenseRouter.localdomain filterlog[20894]: 89,,,49183451-df58-4ecd-a7fd-84e3494bb1dd,pppoe1,match,block,in,4,0x0,,89,0,0,DF,17,udp,76,<PUBLIC-IP>,<PUBLIC-IP>,443,31641,56",
+  "full_log": "Nov 26 16:58:01 OPNsenseRouter.localdomain filterlog[20894]: 89,,,49183451-df58-4ecd-a7fd-84e3494bb1dd,pppoe1,match,block,in,4,0x0,,89,0,0,DF,17,udp,69,<PUBLIC-IP>,<PUBLIC-IP>,443,16000,49",
+  "predecoder": {
+    "program_name": "filterlog",
+    "timestamp": "Nov 26 16:58:01",
+    "hostname": "OPNsenseRouter.localdomain"
+  },
+  "decoder": {
+    "name": "pf"
+  },
+  "data": {
+    "protocol": "udp",
+    "action": "block",
+    "srcip": "<PUBLIC-IP>",
+    "srcport": "443",
+    "dstip": "<PUBLIC-IP>",
+    "dstport": "16000",
+    "id": "49183451-df58-4ecd-a7fd-84e3494bb1dd",
+    "length": "49"
+  },
+  "location": "/var/ossec/logs/opnsense_syslog.log"
+}

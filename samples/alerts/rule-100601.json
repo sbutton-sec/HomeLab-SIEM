@@ -1,0 +1,58 @@
+{
+  "timestamp": "2026-11-26T16:58:52.966+0200",
+  "rule": {
+    "level": 10,
+    "description": "FIM: scheduled task or service changed (possible persistence): /etc/cron.d/wazuh-upgrade-test",
+    "id": "100601",
+    "mitre": {
+      "id": [
+        "T1053"
+      ],
+      "tactic": [
+        "Execution",
+        "Persistence",
+        "Privilege Escalation"
+      ],
+      "technique": [
+        "Scheduled Task/Job"
+      ]
+    },
+    "firedtimes": 2,
+    "mail": false,
+    "groups": [
+      "local",
+      "syscheck",
+      "fim"
+    ]
+  },
+  "agent": {
+    "id": "003",
+    "name": "pihole",
+    "ip": "10.66.66.50"
+  },
+  "manager": {
+    "name": "siem"
+  },
+  "id": "1795705132.5720150",
+  "full_log": "File '/etc/cron.d/wazuh-upgrade-test' deleted\nMode: realtime\n",
+  "syscheck": {
+    "path": "/etc/cron.d/wazuh-upgrade-test",
+    "mode": "realtime",
+    "size_after": "0",
+    "perm_after": "rw-r--r--",
+    "uid_after": "0",
+    "gid_after": "0",
+    "md5_after": "d41d8cd98f00b204e9800998ecf8427e",
+    "sha1_after": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "sha256_after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "uname_after": "root",
+    "gname_after": "root",
+    "mtime_after": "2026-11-26T16:58:32",
+    "inode_after": 524779,
+    "event": "deleted"
+  },
+  "decoder": {
+    "name": "syscheck_deleted"
+  },
+  "location": "syscheck"
+}

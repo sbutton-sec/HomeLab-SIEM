@@ -1,0 +1,37 @@
+$ diff -u /var/ossec/ruleset/decoders/0290-solaris_decoders.xml /var/ossec/etc/decoders/0290-solaris_decoders.xml
+--- /var/ossec/ruleset/decoders/0290-solaris_decoders.xml	2026-11-20 13:23:42.000000000 +0200
++++ /var/ossec/etc/decoders/0290-solaris_decoders.xml	2026-11-25 15:50:42.362570225 +0200
+@@ -17,6 +17,32 @@
+   - failed session 2740580090 by root as root:root from <PUBLIC-IP>
+   - ok session 347344759 by 500959152 as root:root from <PUBLIC-IP> obj
+   -->
++<!-- ===== OPNsense web GUI audit log (added 2026-11-25) =====
++     OPNsense logs GUI logins as program "audit", the same name Solaris BSM uses.
++     These decoders sit BEFORE solaris_bsm so OPNsense lines are matched first. -->
++<decoder name="opnsense-audit">
++  <program_name>^audit$</program_name>
++  <prematch type="pcre2">\.php|WebGui|\buser \S+ </prematch>
++</decoder>
++
++<decoder name="opnsense-audit-fields">
++  <parent>opnsense-audit</parent>
++  <regex type="pcre2">for (?:user )?'([^']+)' from:? (\d{1,3}(?:\.\d{1,3}){3})</regex>
++  <order>dstuser, srcip</order>
++</decoder>
++
++<decoder name="opnsense-audit-fields">
++  <parent>opnsense-audit</parent>
++  <regex type="pcre2">\buser (\S+) .*? at (\d{1,3}(?:\.\d{1,3}){3})</regex>
++  <order>dstuser, srcip</order>
++</decoder>
++
++<decoder name="opnsense-audit-fields">
++  <parent>opnsense-audit</parent>
++  <regex type="pcre2">(/[\w./-]+\.php):</regex>
++  <order>url</order>
++</decoder>
++
+ <decoder name="solaris_bsm">
+   <program_name>^audit$</program_name>
+ </decoder>
+

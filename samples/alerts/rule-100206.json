@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-11-25T16:16:39.464+0200",
+  "rule": {
+    "level": 5,
+    "description": "OPNsense: FAILED web GUI login for 'root' from 10.66.66.66.",
+    "id": "100206",
+    "firedtimes": 4,
+    "mail": false,
+    "groups": [
+      "local",
+      "opnsense",
+      "authentication_failed"
+    ]
+  },
+  "agent": {
+    "id": "001",
+    "name": "OPNsenseRouter.localdomain",
+    "ip": "10.66.66.1"
+  },
+  "manager": {
+    "name": "siem"
+  },
+  "id": "1795616199.17444037",
+  "full_log": "Nov 25 16:16:38 OPNsenseRouter.localdomain audit[38699]: /index.php: Web GUI authentication error for 'root' from 10.66.66.66",
+  "predecoder": {
+    "program_name": "audit",
+    "timestamp": "Nov 25 16:16:38",
+    "hostname": "OPNsenseRouter.localdomain"
+  },
+  "decoder": {
+    "name": "opnsense-audit"
+  },
+  "data": {
+    "srcip": "10.66.66.66",
+    "dstuser": "root",
+    "url": "/index.php"
+  },
+  "location": "/var/ossec/logs/opnsense_syslog.log"
+}

@@ -1,0 +1,4 @@
+# Daily Wazuh summary to Telegram (homelab, added 2026-11-25) - every day at 09:00
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+0 9 * * * root /usr/local/sbin/wazuh-daily-summary.py yesterday >> /var/log/wazuh-daily-summary.log 2>&1

@@ -1,0 +1,81 @@
+{
+  "timestamp": "2026-11-26T15:41:20.709+0200",
+  "rule": {
+    "level": 10,
+    "description": "CVE-2026-84786 affects openssl",
+    "id": "23505",
+    "firedtimes": 24,
+    "mail": false,
+    "groups": [
+      "vulnerability-detector"
+    ],
+    "gdpr": [
+      "IV_35.7.d"
+    ],
+    "pci_dss": [
+      "11.2.1",
+      "11.2.3"
+    ],
+    "tsc": [
+      "CC7.1",
+      "CC7.2"
+    ]
+  },
+  "agent": {
+    "id": "002",
+    "name": "proxmox",
+    "ip": "10.66.66.22"
+  },
+  "manager": {
+    "name": "siem"
+  },
+  "id": "1795700480.3899200",
+  "decoder": {
+    "name": "json"
+  },
+  "data": {
+    "vulnerability": {
+      "assigner": "openssl",
+      "classification": "CVSS",
+      "cve": "CVE-2026-84786",
+      "cvss": {
+        "cvss3": {
+          "base_score": "7.500000",
+          "vector": {
+            "attack_vector": "NETWORK",
+            "availability": "HIGH",
+            "confidentiality_impact": "NONE",
+            "integrity_impact": "NONE",
+            "privileges_required": "NONE",
+            "scope": "UNCHANGED",
+            "user_interaction": "NONE"
+          }
+        }
+      },
+      "enumeration": "CVE",
+      "package": {
+        "architecture": "amd64",
+        "condition": "Package default status",
+        "name": "openssl",
+        "source": " ",
+        "version": "3.0.22-1~deb12u2"
+      },
+      "published": "2026-11-18T12:17:23Z",
+      "rationale": "Issue summary: A DANE-enabled TLS client may crash by dereferencing a NULL pointer when processing an unusual combination of certificate and TLSA records.  Impact summary: The impact is limited to a client crash (potential Denial of Service).  CWE: CWE-476: NULL Pointer Dereference  Description: A DANE-enabled TLS client that supports TLSA records with at least one of the PKIX-TA(0) or PKIX-EE(1) usages alongside the DANE-TA(2) usage may crash by dereferencing a NULL pointer if the server claims a trusted CA's certificate to be its end-entity certificate and has an unusual mix of associated TLSA records.  DANE SMTP clients should not be affected since only the DANE-TA(2) and DANE-EE(3) TLSA record usages are specified applicable in SMTP.  For example, the Postfix MTA is not affected, while the Exim MTA does not at present use OpenSSL's DANE implementation.  Use of DANE in validation of RFC7250 raw public keys (RPKs) is also unaffected, as these only use DANE-EE(3) TLSA records.  Only applications that support combining the DANE PKI with a traditional PKI are potentially affected.  A DANE-enabled browser or similar, that uses OpenSSL's DANE API could be affected.  FIPS impact: no The DANE API is outside the FIPS module boundary.",
+      "reference": "https://security-tracker.debian.org/tracker/CVE-2026-84786",
+      "scanner": {
+        "reference": "https://cti.wazuh.com/vulnerabilities/cves/CVE-2026-84786"
+      },
+      "score": {
+        "base": "7.500000",
+        "version": "3.1"
+      },
+      "severity": "High",
+      "status": "Active",
+      "title": "CVE-2026-84786 affects openssl",
+      "type": "Packages",
+      "updated": "2026-11-24T12:17:26Z"
+    }
+  },
+  "location": "vulnerability-detector"
+}

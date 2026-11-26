@@ -1,0 +1,76 @@
+{
+  "timestamp": "2026-11-26T14:30:50.090+0200",
+  "rule": {
+    "level": 10,
+    "description": "sshd: brute force trying to get access to the system. Non existent user.",
+    "id": "5712",
+    "mitre": {
+      "id": [
+        "T1110"
+      ],
+      "tactic": [
+        "Credential Access"
+      ],
+      "technique": [
+        "Brute Force"
+      ]
+    },
+    "frequency": 8,
+    "firedtimes": 1,
+    "mail": false,
+    "groups": [
+      "syslog",
+      "sshd",
+      "authentication_failures"
+    ],
+    "gdpr": [
+      "IV_35.7.d",
+      "IV_32.2"
+    ],
+    "hipaa": [
+      "164.312.b"
+    ],
+    "nist_800_53": [
+      "SI.4",
+      "AU.14",
+      "AC.7"
+    ],
+    "pci_dss": [
+      "11.4",
+      "10.2.4",
+      "10.2.5"
+    ],
+    "tsc": [
+      "CC6.1",
+      "CC6.8",
+      "CC7.2",
+      "CC7.3"
+    ]
+  },
+  "agent": {
+    "id": "003",
+    "name": "pihole",
+    "ip": "10.66.66.50"
+  },
+  "manager": {
+    "name": "siem"
+  },
+  "id": "1795696250.3472920",
+  "previous_output": "Nov 26 12:30:48 ubuntu sshd[21154]: Invalid user attacker from 10.66.66.22 port 37430\nNov 26 12:30:47 ubuntu sshd[21152]: Invalid user attacker from 10.66.66.22 port 37422\nNov 26 12:30:46 ubuntu sshd[21150]: Invalid user attacker from 10.66.66.22 port 37414\nNov 26 12:30:45 ubuntu sshd[21148]: Invalid user attacker from 10.66.66.22 port 37408\nNov 26 12:30:43 ubuntu sshd[21146]: Invalid user attacker from 10.66.66.22 port 37392\nNov 26 12:30:42 ubuntu sshd[21144]: Invalid user attacker from 10.66.66.22 port 37378\nNov 26 12:30:34 ubuntu sshd[21142]: Invalid user attacker from 10.66.66.22 port 35730",
+  "full_log": "Nov 26 12:30:49 ubuntu sshd[21156]: Invalid user attacker from 10.66.66.22 port 37442",
+  "predecoder": {
+    "program_name": "sshd",
+    "timestamp": "Nov 26 12:30:49",
+    "hostname": "ubuntu"
+  },
+  "decoder": {
+    "parent": "sshd",
+    "name": "sshd"
+  },
+  "data": {
+    "srcip": "10.66.66.22",
+    "srcport": "37442",
+    "srcuser": "attacker"
+  },
+  "location": "journald"
+}

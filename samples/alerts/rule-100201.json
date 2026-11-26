@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-11-26T16:17:37.558+0200",
+  "rule": {
+    "level": 3,
+    "description": "OPNsense: web GUI login by 'root' from 10.66.66.66.",
+    "id": "100201",
+    "firedtimes": 1,
+    "mail": false,
+    "groups": [
+      "local",
+      "opnsense",
+      "authentication_success"
+    ]
+  },
+  "agent": {
+    "id": "001",
+    "name": "OPNsenseRouter.localdomain",
+    "ip": "10.66.66.1"
+  },
+  "manager": {
+    "name": "siem"
+  },
+  "id": "1795702657.4406141",
+  "full_log": "Nov 26 16:17:37 OPNsenseRouter.localdomain audit[85620]: /index.php: Successful login for user 'root' from: 10.66.66.66",
+  "predecoder": {
+    "program_name": "audit",
+    "timestamp": "Nov 26 16:17:37",
+    "hostname": "OPNsenseRouter.localdomain"
+  },
+  "decoder": {
+    "name": "opnsense-audit"
+  },
+  "data": {
+    "srcip": "10.66.66.66",
+    "dstuser": "root",
+    "url": "/index.php"
+  },
+  "location": "/var/ossec/logs/opnsense_syslog.log"
+}

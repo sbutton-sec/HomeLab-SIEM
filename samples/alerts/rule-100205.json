@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-11-25T18:51:55.293+0200",
+  "rule": {
+    "level": 3,
+    "description": "OPNsense: web GUI logout by 'root' from 10.66.66.66.",
+    "id": "100205",
+    "firedtimes": 1,
+    "mail": false,
+    "groups": [
+      "local",
+      "opnsense"
+    ]
+  },
+  "agent": {
+    "id": "001",
+    "name": "OPNsenseRouter.localdomain",
+    "ip": "10.66.66.1"
+  },
+  "manager": {
+    "name": "siem"
+  },
+  "id": "1795625515.18101761",
+  "full_log": "Nov 25 18:51:54 OPNsenseRouter.localdomain audit[20683]: /index.php: User logged out for user 'root' from: 10.66.66.66",
+  "predecoder": {
+    "program_name": "audit",
+    "timestamp": "Nov 25 18:51:54",
+    "hostname": "OPNsenseRouter.localdomain"
+  },
+  "decoder": {
+    "name": "opnsense-audit"
+  },
+  "data": {
+    "srcip": "10.66.66.66",
+    "dstuser": "root",
+    "url": "/index.php"
+  },
+  "location": "/var/ossec/logs/opnsense_syslog.log"
+}

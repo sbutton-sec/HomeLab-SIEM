@@ -1,0 +1,57 @@
+{
+  "timestamp": "2026-11-26T06:43:08.083+0200",
+  "rule": {
+    "level": 10,
+    "description": "FIM: Proxmox configuration changed: /etc/pve/nodes/pve/lrm_status",
+    "id": "100603",
+    "firedtimes": 4,
+    "mail": false,
+    "groups": [
+      "local",
+      "syscheck",
+      "fim"
+    ]
+  },
+  "agent": {
+    "id": "002",
+    "name": "proxmox",
+    "ip": "10.66.66.22"
+  },
+  "manager": {
+    "name": "siem"
+  },
+  "id": "1795668188.208305",
+  "full_log": "File '/etc/pve/nodes/pve/lrm_status' modified\nMode: scheduled\nChanged attributes: inode,mtime,md5,sha1,sha256\nOld modification time was: '1795624982', now it is '1795668185'\nOld inode was: '667755', now it is '677834'\nOld md5sum was: '3717705bcddae7af1182680843e78d45'\nNew md5sum is : '7eb5c25d58a7f98d725b4edf96d3b981'\nOld sha1sum was: 'a7fcb0c2fc84c373e212f4823a93d40fe9e08c88'\nNew sha1sum is : 'c8e5a0d48064555247debe624c07b72417d04897'\nOld sha256sum was: 'fadbaa0a2368ce3bc31bd778b50564da35d05b92ed8f554e3d137db7ff962432'\nNew sha256sum is : '0ff0565d2fc02b32fd24bb6eaaed8224f99884fa279ed2cd1fbd58bfdcb241d5'\n",
+  "syscheck": {
+    "path": "/etc/pve/nodes/pve/lrm_status",
+    "mode": "scheduled",
+    "size_after": "83",
+    "perm_after": "rw-r-----",
+    "uid_after": "0",
+    "gid_after": "33",
+    "md5_before": "3717705bcddae7af1182680843e78d45",
+    "md5_after": "7eb5c25d58a7f98d725b4edf96d3b981",
+    "sha1_before": "a7fcb0c2fc84c373e212f4823a93d40fe9e08c88",
+    "sha1_after": "c8e5a0d48064555247debe624c07b72417d04897",
+    "sha256_before": "fadbaa0a2368ce3bc31bd778b50564da35d05b92ed8f554e3d137db7ff962432",
+    "sha256_after": "0ff0565d2fc02b32fd24bb6eaaed8224f99884fa279ed2cd1fbd58bfdcb241d5",
+    "uname_after": "root",
+    "gname_after": "www-data",
+    "mtime_before": "2026-11-25T18:43:02",
+    "mtime_after": "2026-11-26T06:43:05",
+    "inode_before": 667755,
+    "inode_after": 677834,
+    "changed_attributes": [
+      "inode",
+      "mtime",
+      "md5",
+      "sha1",
+      "sha256"
+    ],
+    "event": "modified"
+  },
+  "decoder": {
+    "name": "syscheck_integrity_changed"
+  },
+  "location": "syscheck"
+}

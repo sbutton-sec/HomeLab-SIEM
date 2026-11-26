@@ -1,0 +1,12 @@
+[OPTIONS]
+
+enable: 1
+policy_in: DROP
+
+[ALIASES]
+local_network 10.66.66.66
+
+[RULES]
+
+
+
